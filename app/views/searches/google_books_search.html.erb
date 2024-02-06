@@ -12,15 +12,15 @@
             <%= hidden_field(:book, :page_count, :value => book["pageCount"]) %>
 
             <% book["authors"]&.each_with_index do |author, index| %>
-                <%= hidden_field_tag("book[authors][#{index}]", author) %>
+                <%= hidden_field_tag("book[authors][]", author) %>
             <% end %>
 
             <% book["categories"]&.each_with_index do |category, index| %>
-                <%= hidden_field_tag("book[categories][#{index}]", category) %>
+                <%= hidden_field_tag("book[categories][]", category) %>
             <% end %>
 
             <% book["imageLinks"]&.each do |key,value| %>
-                <%= hidden_field_tag("book[image_links][#{key}]", value) %>
+                <%= hidden_field_tag("book[image_links][]", value) %>
             <% end %>
 
             <%= submit_tag "Create" %>
