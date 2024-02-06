@@ -66,7 +66,7 @@ class BooksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def book_params
-    permitted_params = params.require(:book).permit(:title, :description, :page_count, authors: params["book"]["authors"].keys, categories: params["book"]["categories"].keys, image_links: params["book"]["image_links"].keys)
+    permitted_params = params.require(:book).permit(:title, :description, :page_count, authors: [], categories: [], image_links: [])
   end
     
   def add_to_shelf
